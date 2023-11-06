@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:task_management/features/todo/pages/home_page.dart';
+
+import 'common/utils/app_imports.dart';
+import 'features/onboarding/pages/on_boarding.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -10,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -21,10 +20,12 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Flutter Task Management',
             theme: ThemeData(
+              scaffoldBackgroundColor: AppConstants.kBkDark,
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const HomePage(),
+            themeMode: ThemeMode.dark,
+            home: const OnBoardingPage(),
           );
         });
   }

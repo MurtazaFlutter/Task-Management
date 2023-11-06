@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:task_management/common/utils/app_cons.dart';
 import 'package:task_management/common/widgets/app_style.dart';
 import 'package:task_management/common/widgets/reuseable_text.dart';
 
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
           child: TextWidget(
               text: "To do with Riverpod",
-              style: appStyle(20.sp, Colors.black, FontWeight.w700))),
+              style: appStyle(20.sp, AppConstants.kGreen, FontWeight.w700))),
     );
   }
 }
