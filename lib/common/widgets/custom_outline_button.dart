@@ -24,7 +24,8 @@ class CustomOutLineButton extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          border: Border.all(color: AppConstants.kLight),
+          color: Colors.white,
+          //  border: Border.all(color: AppConstants.kLight),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Center(

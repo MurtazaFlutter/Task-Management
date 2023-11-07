@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Flutter Task Management',
             theme: ThemeData(
+              appBarTheme: const AppBarTheme(
+                  iconTheme: IconThemeData(color: AppConstants.kLight)),
               scaffoldBackgroundColor: AppConstants.kBkDark,
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
