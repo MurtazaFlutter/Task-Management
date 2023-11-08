@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:task_management/common/utils/app_imports.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -7,7 +6,7 @@ class CustomTextField extends StatelessWidget {
       required this.hintText,
       this.suffixIcon,
       this.prefixIcon,
-      required this.hintStyle,
+      this.hintStyle,
       required this.controller,
       this.onChanged,
       this.keyboardType});
@@ -17,7 +16,7 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
-  final TextStyle hintStyle;
+  final TextStyle? hintStyle;
   final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
