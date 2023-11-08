@@ -16,11 +16,10 @@ class TestPage extends ConsumerWidget {
           children: [
             TextWidget(
                 text: code,
-                style: appStyle(30.sp, AppConstants.kBkDark, FontWeight.bold)),
+                style: appStyle(30.sp, AppConstants.kGreen, FontWeight.bold)),
             TextButton(
               onPressed: () {
                 ref.read(codeStateProvider.notifier).setStart("Hello Murtaza");
-                debugPrint("code value $code");
               },
               child: const Text("Press me"),
             ),

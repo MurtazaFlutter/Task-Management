@@ -1,5 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:task_management/common/utils/app_imports.dart';
+import 'package:task_management/features/todo/controllers/expension.dart';
 import 'package:task_management/features/todo/widgets/expension_tile.dart';
 import 'package:task_management/features/todo/widgets/todo_tile.dart';
 
@@ -117,18 +118,67 @@ class _HomePageState extends ConsumerState<HomePage>
                 ),
               ),
               Gap(20.h),
-              const XpensionTile(
+              XpensionTile(
                   text1: "Tomorow's Task",
                   text2: "Tomorrow tasks are shown here",
-                  children: []),
+                  onExpansionChange: (bool expanded) {
+                    ref
+                        .read(expensionStateProvider.notifier)
+                        .setStart(!expanded);
+                  },
+                  trailing: Padding(
+                    padding: EdgeInsets.only(right: 12.w),
+                    child: ref.watch(expensionStateProvider)
+                        ? const Icon(
+                            AntDesign.circledown,
+                            color: AppConstants.kLight,
+                          )
+                        : const Icon(
+                            AntDesign.closecircleo,
+                            color: AppConstants.kBlueLight,
+                          ),
+                  ),
+                  children: [
+                    TodoTile(
+                      start: "03:00",
+                      end: "6:00",
+                      switcher: Switch(value: false, onChanged: (value) {}),
+                    ),
+                  ]),
               Gap(20.h),
               XpensionTile(
+                  onExpansionChange: (bool expanded) {
+                    ref
+                        .read(expenssionState0Provider.notifier)
+                        .setStart(!expanded);
+                  },
+                  trailing: Padding(
+                    padding: EdgeInsets.only(right: 12.w),
+                    child: ref.watch(expenssionState0Provider)
+                        ? const Icon(
+                            AntDesign.circledown,
+                            color: AppConstants.kLight,
+                          )
+                        : const Icon(
+                            AntDesign.closecircleo,
+                            color: AppConstants.kBlueLight,
+                          ),
+                  ),
                   text1: DateTime.now()
                       .add(const Duration(days: 2))
                       .toString()
                       .substring(5, 10),
                   text2: "Day After tomorrow",
-                  children: const []),
+                  children: [
+                    TodoTile(
+                      start: "03:00",
+                      end: "6:00",
+                      switcher: Switch(
+                        value: false,
+                        onChanged: (value) {},
+                      ),
+                    ),
+                  ]),
             ],
           ),
         ),

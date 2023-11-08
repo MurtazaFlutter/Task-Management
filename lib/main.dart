@@ -1,7 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:task_management/features/todo/pages/home_page.dart';
 import 'common/utils/app_imports.dart';
-import 'features/auth/pages/test_page.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
               useMaterial3: true,
             ),
             themeMode: ThemeMode.dark,
-            home: const TestPage(),
+            home: const HomePage(),
           );
         });
   }

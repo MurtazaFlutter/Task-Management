@@ -5,7 +5,7 @@ part 'code_provider.g.dart';
 class CodeState extends _$CodeState {
   @override
   String build() {
-    return "Hello Wrold";
+    return "";
   }
 
   void setStart(String newState) {
