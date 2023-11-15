@@ -1,4 +1,5 @@
 import 'package:sqflite/sqflite.dart' as sql;
+import 'package:task_management/common/utils/app_imports.dart';
 import 'package:task_management/models/todo.dart';
 
 class DBHelper {
@@ -81,5 +82,15 @@ class DBHelper {
     final result =
         await db.update('todos', data, where: 'id == ?', whereArgs: [id]);
     return result;
+  }
+
+  static Future<void> deleteItem(int id) async {
+    final db = await DBHelper.db();
+
+    try {
+      db.delete('todos', where: "id = ?", whereArgs: [id]);
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 }
