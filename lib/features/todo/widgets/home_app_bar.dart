@@ -1,3 +1,5 @@
+import 'package:task_management/features/todo/pages/add.dart';
+
 import '../../../common/utils/app_imports.dart';
 import '../../../common/widgets/custom_text_field.dart';
 
@@ -38,7 +40,10 @@ class HomeAppBar extends StatelessWidget {
                           color: AppConstants.kLight,
                           borderRadius: BorderRadius.all(Radius.circular(9.r))),
                       child: GestureDetector(
-                        onTap: null,
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const AddTask()));
+                        },
                         child: const Icon(
                           Icons.add,
                           color: AppConstants.kBkDark,
